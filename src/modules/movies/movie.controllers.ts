@@ -1,0 +1,39 @@
+import { Request, Response } from "express";
+import { MovieService } from "./movie.services";
+
+const createMovie =  async(req:Request, res : Response)=>{
+
+    const MovieData = req.body;
+
+    const result = await MovieService.createMovie(MovieData);
+
+    res.json({
+        message: 'Movie created successfully!!',
+        success: true,
+        data: result
+    });  
+
+}
+
+const getAllMovies = async (req: Request, res: Response) => {
+    try {
+      const result = await MovieService.getAllMovies();
+  
+      res.status(200).json({
+        success: true,
+        message: "Movies are fetched successfully !!",
+        data: result,
+      });
+    } catch (err: any) {
+      res.status(500).json({
+        success: false,
+        message: "Could not fetch movies!",
+        error: err,
+      });
+    }
+  };
+
+export const MovieController = {
+    createMovie,
+    getAllMovies
+}
