@@ -6,6 +6,7 @@ export type TReviews = {
 
 
 export type TMovie = {
+    
     title: string;
     description: string;
     releaseDate: Date;

@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { Movie } from './modules/movies/movie.model';
+
 import { MovieRoute } from './modules/movies/movie.route';
 
 const app = express()

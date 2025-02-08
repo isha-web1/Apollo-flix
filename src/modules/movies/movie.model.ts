@@ -8,6 +8,7 @@ const reviewSchema = new Schema<TReviews>({
 })
 
 const movieSchema = new Schema<TMovie>({
+  
     title: {
         type: String,
         required: [true, "Title is required"],

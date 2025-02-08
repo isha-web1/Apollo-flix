@@ -9,6 +9,8 @@ router.post('/', MovieController.createMovie);
 
 router.get('/', MovieController.getAllMovies);
 
+router.get('/:slug', MovieController.getMovieBySlug)
+
 
 
 
