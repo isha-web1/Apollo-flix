@@ -26,6 +26,7 @@ const addReview = async (slug : string, reviewData : Partial<TReviews> ) : Promi
    }catch(error){
     console.log(error)
   await  session.abortTransaction();
+   throw error;
    }
    session.endSession();
 }
