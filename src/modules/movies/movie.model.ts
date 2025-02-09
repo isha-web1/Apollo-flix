@@ -1,11 +1,7 @@
 import { model, Schema } from "mongoose";
-import { TMovie, TReviews } from "./movie.interface";
+import { TMovie,  } from "./movie.interface";
 
-const reviewSchema = new Schema<TReviews>({
-    email:{type:String, required:true},
-    rating:{type:Number, required:true},
-    comment : {type:String, required:true}
-})
+
 
 const movieSchema = new Schema<TMovie>({
   
@@ -24,9 +20,7 @@ const movieSchema = new Schema<TMovie>({
         type: String,
         required: [true, "Genre is required"],
       },
-      reviews: {
-        type: [reviewSchema],
-      },
+     
       slug: {
         type: String,
       },
@@ -38,6 +32,10 @@ const movieSchema = new Schema<TMovie>({
         type: Number,
         default: 0,
       },
+      totalRating : {
+        type : Number,
+        default : 0
+      }
 })
 
 

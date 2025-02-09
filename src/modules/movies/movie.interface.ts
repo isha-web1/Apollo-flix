@@ -1,8 +1,4 @@
-export type TReviews = {
-    email: string;
-    rating: number;
-    comment: string;
-}
+
 
 
 export type TMovie = {
@@ -11,7 +7,7 @@ export type TMovie = {
     description: string;
     releaseDate: Date;
     genre: string;
-    reviews : [TReviews];
+    totalRating: number;
     slug: string;
     viewCount: number;
     isDeleted?: boolean;
